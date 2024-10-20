@@ -1,40 +1,72 @@
-<h1 align="center">👋 Hi, I’m Khush Vasudeo Patil</h1>
-<h2 align="center">A Passionate IoT,Embedded and Cybersecurity Enthusiast from India</h2>
+# Personal Portfolio ⚡️ 
+> A clean, beautiful, responsive portfolio template for Software Developers!
 
-- 🔭 I’m would like to work on **CyberSecurity, IoT & Embedded projects**
- 
-- 👀 I’m interested in **IoT,Embedded, Microelectronics and Cybersecurity**
+> https://varadbhogayata.github.io
 
-- 🌱 I’m currently learning **IoT, Embedded, Microelectronics and Cloud Security**
+![GitHub stars](https://img.shields.io/github/stars/varadbhogayata/varadbhogayata.github.io) 
+![GitHub forks](https://img.shields.io/github/forks/varadbhogayata/varadbhogayata.github.io)
+[![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/varadbhogayata/varadbhogayata.github.io/commits/master)
+[![Website shields.io](https://img.shields.io/badge/website-up-yellow)](http://varadbhogayata.github.io/)
+[![Ask Me Anything !](https://img.shields.io/badge/ask%20me-linkedin-1abc9c.svg)](https://www.linkedin.com/in/varadbhogayata/)
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
-- 👨‍💻 All of my projects are available at [https://github.com/AssassinK786](https://github.com/AssassinK786)
+### Website Preview
+<p align="center"> 
+  <kbd>
+    <a href="https://varadbhogayata.github.io" target="_blank"><img src="examples/preview.gif">
+  </a>
+  </kbd>
+</p>
 
-- 💞️ I’m looking to collaborate on **CyberSecurity, IoT, Microelectronics& Embedded Projects**
+:star: Star me on GitHub — it helps!
 
-<details><summary>GitHub Metrics</summary>
-  
-<br>
-<a href="https://github.com/AssassinK786">
-  <img align="top" width="50%" src="https://github.com/AssassinK786/Assassink786.github.io/raw/main/.metrics/header.svg" />
-</a>
-<br/>
-<a href="https://github.com/AssassinK786">
-  <img align="top" width="50%" src="https://github.com/AssassinK786/Assassink786.github.io/raw/main/.metrics/repositories.svg" />
-</a>
-<a href="https://github.com/AssassinK786">
-  <img align="top" width="49%" src="https://github.com/AssassinK786/Assassink786.github.io/raw/main/.metrics/acti_comm.svg" />
-</a>
+## Features 📋
+⚡️ Fully Responsive\
+⚡️ Valid HTML5 & CSS3\
+⚡️ Typing animation using `Typed.js`\
+⚡️ Easy to modify
 
-<a href="https://github.com/AssassinK786">
-  <img align="top" width="50%" src="https://github.com/AssassinK786/Assassink786.github.io/raw/main/.metrics/iso_calender.svg" />
-</a>
+## Installation & Deployment 📦
+- Clone the repository and modify the content of <b>index.html</b> according to your requirement.
+- Add or remove images from `varadbhogayata.github.io/assets/img/` directory as per your requirement.
+- I highly recommend to use [Github Pages](https://create-react-app.dev/docs/deployment/#github-pages) to deploy the website the EASIEST WAY.
+- To deploy your website, first you need to create github repository with name `<your-github-username>.github.io`. Please don't give any other name.
+- Push the generated code to the `master` branch of this repository.
+- <b>NOTE:</b> Make sure to set `analyticsId` from your Google Analytics account inside the Google Analytics script tag, if you want to use your own Google Analytics account.
 
-<a href="https://github.com/AssassinK786">
-    <img align="top" width="49%" src="https://github.com/AssassinK786/Assassink786.github.io/raw/main/.metrics/issue_pr_lang.svg" />
-</a>
+## Sections 📚
+✔️ About me\
+✔️ Experience\
+✔️ Projects \
+✔️ Skills \
+✔️ Education\
+✔️ Contact Info\
+✔️ Resume
 
-<a href="https://github.com/AssassinK786">
-    <img align="top" width="49%" src="https://github.com/AssassinK786/AssassinK786/raw/main/.metrics/achievements.svg" />
-</a>
+To view a live example, **[click here](https://varadbhogayata.github.io/)**
 
-</details>
+## Tools Used 🛠️
+* [<b>GitHub Pages</b>](https://create-react-app.dev/docs/deployment/#github-pages) - To host my static website (HTML, CSS, JS).
+* [<b>Materialize</b>](https://materializecss.com/) - A CSS framework to get Google's Material Design components.
+* [<b>Typed.js</b>](https://mattboldt.com/demos/typed-js/) - JavaScript Library
+
+## Contributing 💡
+#### Step 1
+
+- **Option 1**
+    - 🍴 Fork this repo!
+
+- **Option 2**
+    - 👯 Clone this repo to your local machine.
+
+
+#### Step 2
+
+- **Build your code** 🔨🔨🔨
+
+#### Step 3
+
+- 🔃 Create a new pull request.
+
+## License 📄
+This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
