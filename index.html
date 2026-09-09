@@ -20,7 +20,7 @@
 
 <header class="site-header">
   <nav class="navbar container">
-    <a href="#home" class="brand">Khush Vasudo Patil<span>.</span></a>
+    <a href="#home" class="brand">Khush Vasudeo Patil<span>.</span></a>
     <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -239,6 +239,17 @@
         <a class="project-link" href="https://github.com/AssassinK786" target="_blank" rel="noopener">View repositories ↗</a>
       </article>
 
+      <article class="project-card">
+        <div class="project-top">
+          <span class="project-type">IOT / EMBEDDED</span>
+          <span class="project-number">07</span>
+        </div>
+        <h3>Heroku WebSocket-Webhook IoT Bridge</h3>
+        <p>Node.js server on Heroku enabling real-time bidirectional communication between ESP32 and webhook events. ESP32 acts as WebSocket client via ESP32WebSocketClient; a lightweight web frontend monitors the data path live.</p>
+        <div class="tags"><span>Node.js</span><span>WebSockets</span><span>ESP32</span><span>Heroku</span><span>C++</span></div>
+        <a class="project-link" href="https://github.com/Assassink786/herko_WSKhush" target="_blank" rel="noopener">View repository ↗</a>
+      </article>
+
     </div>
   </div>
 </section>
@@ -294,20 +305,63 @@
       <span class="section-number">05</span>
       <h2>Open Source</h2>
     </div>
-    <div class="opensource-content">
-      <div>
-        <p class="lead">I believe semiconductor tooling should be inspectable, reproducible and accessible.</p>
-        <p>I'm particularly interested in open-source FPGA and ASIC ecosystems where engineers can understand what happens underneath commercial abstractions.</p>
-      </div>
-      <div class="repo-list">
-        <a href="https://github.com/openXC7/nextpnr-xilinx" target="_blank" rel="noopener" class="repo-item"><span>nextpnr-xilinx</span><span>↗</span></a>
-        <a href="https://github.com/openXC7/prjxray" target="_blank" rel="noopener" class="repo-item"><span>Project X-Ray</span><span>↗</span></a>
-        <a href="https://github.com/FPGAwars/apio" target="_blank" rel="noopener" class="repo-item"><span>APIO</span><span>↗</span></a>
-        <a href="https://github.com/The-OpenROAD-Project/OpenLane" target="_blank" rel="noopener" class="repo-item"><span>OpenLane</span><span>↗</span></a>
-        <a href="https://github.com/The-OpenROAD-Project/OpenROAD" target="_blank" rel="noopener" class="repo-item"><span>OpenROAD</span><span>↗</span></a>
-        <a href="https://github.com/AssassinK786" target="_blank" rel="noopener" class="repo-item"><span>My GitHub</span><span>↗</span></a>
-      </div>
+
+    <div class="opensource-intro">
+      <p class="lead">I believe semiconductor tooling should be inspectable, reproducible and accessible.</p>
+      <p>I'm particularly interested in open-source FPGA and ASIC ecosystems where engineers can understand what happens underneath commercial abstractions — and I contribute back where I can.</p>
     </div>
+
+    <div class="contrib-grid">
+
+      <div class="contrib-card">
+        <div class="contrib-header">
+          <div>
+            <span class="card-label">FPGA TOOLCHAIN</span>
+            <h3>openXC7 — Xilinx Open-Source Flow</h3>
+            <p class="contrib-sub">Spartan-7 support across prjxray-db, nextpnr-xilinx, and APIO; validated end-to-end on Arty S7-25.</p>
+          </div>
+        </div>
+        <ul class="contrib-list">
+          <li>Added Spartan-7 xc7s25csga324-1 device to prjxray-db with board mapping and full pinout <span class="pr-tag">prjxray-db PR #8</span></li>
+          <li>Added device mapping to prjxray core <span class="pr-tag">prjxray PR #11</span></li>
+          <li>Extended Apio chipdb for Spartan-7 <span class="pr-tag">tools-openxc7 PR #5</span></li>
+          <li>Tested full pipeline on hardware: yosys → nextpnr-xilinx → fasm2frames → xc7frames2bit → openFPGALoader</li>
+        </ul>
+        <div class="tags">
+          <span>nextpnr-xilinx</span><span>Project X-Ray</span><span>APIO</span><span>Spartan-7</span><span>Arty S7-25</span>
+        </div>
+      </div>
+
+      <div class="contrib-card">
+        <div class="contrib-header">
+          <div>
+            <span class="card-label">FPGA IDE</span>
+            <h3>icestudio — iCE40 FPGA IDE</h3>
+            <p class="contrib-sub">Board definitions and device support for VSD Squadron FM; verified on physical hardware with FTDI FT232H.</p>
+          </div>
+        </div>
+        <ul class="contrib-list">
+          <li>Added VSD Squadron FM board definition and pinout to icestudio <span class="pr-tag">icestudio PR #931 ✓ merged</span></li>
+          <li>Contributed device definitions to apio-definitions <span class="pr-tag">PR #31</span> <span class="pr-tag">PR #32</span></li>
+          <li>Follow-on fixes and support in APIO <span class="pr-tag">apio PR #933</span> <span class="pr-tag">PR #934</span></li>
+          <li>Tested full pipeline on Ubuntu 22.04: Yosys + nextpnr + icepack + iceprog with FTDI FT232H programmer</li>
+        </ul>
+        <div class="tags">
+          <span>icestudio</span><span>iCE40</span><span>APIO</span><span>VSD Squadron FM</span><span>FTDI FT232H</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="repo-list" style="margin-top: 2.5rem;">
+      <a href="https://github.com/openXC7/nextpnr-xilinx" target="_blank" rel="noopener" class="repo-item"><span>nextpnr-xilinx</span><span>↗</span></a>
+      <a href="https://github.com/openXC7/prjxray" target="_blank" rel="noopener" class="repo-item"><span>Project X-Ray</span><span>↗</span></a>
+      <a href="https://github.com/FPGAwars/apio" target="_blank" rel="noopener" class="repo-item"><span>APIO</span><span>↗</span></a>
+      <a href="https://github.com/The-OpenROAD-Project/OpenLane" target="_blank" rel="noopener" class="repo-item"><span>OpenLane</span><span>↗</span></a>
+      <a href="https://github.com/The-OpenROAD-Project/OpenROAD" target="_blank" rel="noopener" class="repo-item"><span>OpenROAD</span><span>↗</span></a>
+      <a href="https://github.com/AssassinK786" target="_blank" rel="noopener" class="repo-item"><span>My GitHub</span><span>↗</span></a>
+    </div>
+
   </div>
 </section>
 
