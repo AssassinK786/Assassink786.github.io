@@ -114,10 +114,10 @@ a {
 */
 
 .container {
-  width: min(calc(100% - 3rem), var(--max-w));
+  width: 100%;
   max-width: var(--max-w);
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
+  padding-inline: 0;
 }
 
 
@@ -392,11 +392,9 @@ a {
   margin-inline: auto;
 
   display: grid;
-
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: 1fr 1fr;
 
   gap: 4rem;
-
   align-items: center;
 
   padding-block: 3rem;
