@@ -1272,3 +1272,51 @@ main,
     width: calc(100% - 24px);
   }
 }
+
+
+/* =====================================================
+   OPEN SOURCE — EQUAL CARD WIDTHS
+   ===================================================== */
+
+/* Prevent long PR titles from making the first grid column wider. */
+.contrib-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  width: 100%;
+  min-width: 0;
+}
+
+.contrib-card {
+  min-width: 0;
+  width: 100%;
+}
+
+.contrib-header,
+.pr-list,
+.tags,
+.pr-row,
+.pr-info {
+  min-width: 0;
+}
+
+.pr-info {
+  overflow: hidden;
+}
+
+.pr-title {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pr-meta {
+  min-width: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .contrib-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
