@@ -389,22 +389,117 @@
 </footer>
 
 <script>
+/* ── GitHub PR Feed ── */
+(async () => {
+  const AUTHOR = "AssassinK786";
+ 
+  const GROUPS = {
+    "prs-openxc7": [
+      "openXC7/nextpnr-xilinx",
+      "openXC7/prjxray",
+      "openXC7/tools-openxc7",
+    ],
+    "prs-icestudio": [
+      "FPGAwars/icestudio",
+      "FPGAwars/apio",
+      "FPGAwars/apio-definitions",
+    ],
+  };
+ 
+  function prStatusBadge(pr) {
+    if (pr.pull_request?.merged_at) return '<span class="pr-status merged">merged</span>';
+    if (pr.state === "closed")      return '<span class="pr-status closed">closed</span>';
+    return '<span class="pr-status open">open</span>';
+  }
+ 
+  function repoShort(repoUrl) {
+    // "https://api.github.com/repos/openXC7/prjxray" → "openXC7/prjxray"
+    return repoUrl.replace("https://api.github.com/repos/", "");
+  }
+ 
+  function timeAgo(dateStr) {
+    const d = new Date(dateStr);
+    const diff = Math.floor((Date.now() - d) / 1000);
+    if (diff < 60)      return `${diff}s ago`;
+    if (diff < 3600)    return `${Math.floor(diff/60)}m ago`;
+    if (diff < 86400)   return `${Math.floor(diff/3600)}h ago`;
+    if (diff < 2592000) return `${Math.floor(diff/86400)}d ago`;
+    return d.toLocaleDateString("en-GB", { year: "numeric", month: "short" });
+  }
+ 
+  function renderPRs(containerId, prs) {
+    const el = document.getElementById(containerId);
+    if (!prs.length) {
+      el.innerHTML = '<p class="pr-empty">No pull requests found.</p>';
+      return;
+    }
+    el.innerHTML = prs.map(pr => {
+      const repo  = repoShort(pr.repository_url);
+      const num   = pr.number;
+      const badge = prStatusBadge(pr);
+      const ago   = timeAgo(pr.created_at);
+      const comments = pr.comments ? `<span class="pr-comments">💬 ${pr.comments}</span>` : "";
+      return `
+        <a class="pr-row" href="${pr.html_url}" target="_blank" rel="noopener">
+          <svg class="pr-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354z" fill="currentColor"/>
+            <path fill-rule="evenodd" d="M3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z" fill="currentColor"/>
+          </svg>
+          <div class="pr-info">
+            <span class="pr-title">${pr.title}</span>
+            <span class="pr-meta">
+              <span class="pr-repo">${repo}</span>
+              <span class="pr-num">#${num}</span>
+              · ${ago}
+              ${comments}
+            </span>
+          </div>
+          ${badge}
+        </a>`;
+    }).join("");
+  }
+ 
+  function renderError(containerId) {
+    const el = document.getElementById(containerId);
+    el.innerHTML = '<p class="pr-empty">Could not load pull requests — <a href="https://github.com/AssassinK786" target="_blank" rel="noopener">view on GitHub ↗</a></p>';
+  }
+ 
+  try {
+    // single API call — GitHub search returns all PRs by the author across all public repos
+    const url = `https://api.github.com/search/issues?q=author:${AUTHOR}+type:pr&per_page=50&sort=created&order=desc`;
+    const res  = await fetch(url, { headers: { Accept: "application/vnd.github+json" } });
+    if (!res.ok) throw new Error(res.status);
+    const { items } = await res.json();
+ 
+    for (const [containerId, repos] of Object.entries(GROUPS)) {
+      const repoSet  = new Set(repos.map(r => r.toLowerCase()));
+      const filtered = items.filter(pr =>
+        repoSet.has(repoShort(pr.repository_url).toLowerCase())
+      );
+      renderPRs(containerId, filtered);
+    }
+  } catch {
+    Object.keys(GROUPS).forEach(renderError);
+  }
+})();
+ 
+/* ── Nav ── */
   const menuToggle = document.querySelector(".menu-toggle");
   const navLinks   = document.querySelector(".nav-links");
-
+ 
   menuToggle.addEventListener("click", () => {
     const expanded = menuToggle.getAttribute("aria-expanded") === "true";
     menuToggle.setAttribute("aria-expanded", String(!expanded));
     navLinks.classList.toggle("open");
   });
-
+ 
   document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("open");
       menuToggle.setAttribute("aria-expanded", "false");
     });
   });
-
+ 
   const header = document.querySelector(".site-header");
   window.addEventListener("scroll", () => {
     header.classList.toggle("scrolled", window.scrollY > 30);
