@@ -1,22 +1,30 @@
 name: Metrics
+
 on:
-  # Schedule daily updates
-  schedule: [{cron: "0 0 * * *"}]
-  # (optional) Run workflow manually
+  schedule: [{ cron: "0 0 * * *" }]
   workflow_dispatch:
-  # (optional) Run workflow when pushing on master/main
-  push: {branches: ["main"]}
+  push: { branches: ["main"] }
+
+# Cancel older runs on the same branch so they don't race each other
+concurrency:
+  group: metrics-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    steps:
-      - uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
 
-      - uses: lowlighter/metrics@latest
+    # Timezone fallback: reads the secret; defaults to Asia/Kolkata if unset
+    env:
+      TZ: ${{ secrets.USER_TIMEZONE || 'Asia/Kolkata' }}
+
+    steps:
+
+      # ── Achievements ──────────────────────────────────────────────
+      - name: achievements
+        uses: lowlighter/metrics@v3.34
         with:
           filename: .metrics/achievements.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -24,96 +32,83 @@ jobs:
           user: AssassinK786
           base: achievements
           plugin_achievements: yes
-          plugin_achievements_threshold: B      # Display achievements with rank B or higher
-          plugin_achievements_secrets: yes      # Display unlocked secrets achievements
-          plugin_achievements_display: detailed  # Use compact display
-          plugin_achievements_limit: 0          # Display all unlocked achievements (no limit)
+          plugin_achievements_threshold: B
+          plugin_achievements_secrets: yes
+          plugin_achievements_display: detailed
+          plugin_achievements_limit: 0
 
+      # ── Header ────────────────────────────────────────────────────
       - name: header
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           filename: .metrics/header.svg
-          # You'll need to setup a personal token in your secrets.
           token: ${{ secrets.METRICS_TOKEN }}
-          # GITHUB_TOKEN is a special auto-generated token used for commits
           committer_token: ${{ secrets.GITHUB_TOKEN }}
-
-          # Options
           user: AssassinK786
           template: classic
           base: header
           base_hireable: yes
-          config_timezone: ${{ secrets.USER_TIMEZONE }}     
-          
+          config_timezone: ${{ env.TZ }}
+
+      # ── Lines of code ─────────────────────────────────────────────
       - name: lines
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           filename: .metrics/lines-of-code.svg
           token: ${{ secrets.METRICS_TOKEN }}
           committer_token: ${{ secrets.GITHUB_TOKEN }}
-          base: "repositories"
+          user: AssassinK786
+          base: repositories
           plugin_lines: yes
 
+      # ── Activity + Community ──────────────────────────────────────
       - name: acti_comm
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           filename: .metrics/acti_comm.svg
-          # You'll need to setup a personal token in your secrets.
           token: ${{ secrets.METRICS_TOKEN }}
-          # GITHUB_TOKEN is a special auto-generated token used for commits
           committer_token: ${{ secrets.GITHUB_TOKEN }}
-
-          # Options
           user: AssassinK786
           template: classic
           base: activity, community
-          config_timezone: ${{ secrets.USER_TIMEZONE }}
-          
+          config_timezone: ${{ env.TZ }}
+
+      # ── ISO Calendar ──────────────────────────────────────────────
       - name: iso_calendar
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           filename: .metrics/iso_calender.svg
-          # You'll need to setup a personal token in your secrets.
           token: ${{ secrets.METRICS_TOKEN }}
-          # GITHUB_TOKEN is a special auto-generated token used for commits
           committer_token: ${{ secrets.GITHUB_TOKEN }}
-
-          # Options
           user: AssassinK786
           template: classic
           base: ""
-          config_timezone: ${{ secrets.USER_TIMEZONE }}
+          config_timezone: ${{ env.TZ }}
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
 
+      # ── Issues / PRs / Languages ──────────────────────────────────
       - name: issue_pr_lang
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           filename: .metrics/issue_pr_lang.svg
-          # You'll need to setup a personal token in your secrets.
           token: ${{ secrets.METRICS_TOKEN }}
-          # GITHUB_TOKEN is a special auto-generated token used for commits
           committer_token: ${{ secrets.GITHUB_TOKEN }}
-
-          # Options
           user: AssassinK786
           template: classic
           base: ""
-          config_timezone: ${{ secrets.USER_TIMEZONE }}
+          config_timezone: ${{ env.TZ }}
           plugin_followup: yes
           plugin_languages: yes
 
+      # ── Repositories ──────────────────────────────────────────────
       - name: repositories
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           filename: .metrics/repositories.svg
-          # You'll need to setup a personal token in your secrets.
           token: ${{ secrets.METRICS_TOKEN }}
-          # GITHUB_TOKEN is a special auto-generated token used for commits
           committer_token: ${{ secrets.GITHUB_TOKEN }}
-
-          # Options
           user: AssassinK786
           template: classic
           base: repositories
-          config_timezone: ${{ secrets.USER_TIMEZONE }}
+          config_timezone: ${{ env.TZ }}
