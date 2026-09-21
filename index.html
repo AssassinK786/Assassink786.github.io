@@ -1,85 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Khush Vasudeo Patil - FPGA, RTL, ASIC, Embedded Systems, Open-Source EDA and AI × Hardware.">
-    <meta name="author" content="Khush Vasudeo Patil">
-    <meta name="theme-color" content="#080b12">
-    <meta property="og:title" content="Khush Vasudeo Patil - FPGA • RTL • ASIC • EDA">
-    <meta property="og:description" content="Digital hardware, FPGA toolchains, ASIC design, open-source EDA and AI × Hardware.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://khushpatil.is-a.dev/">
-    <title>Khush Vasudeo Patil | FPGA • RTL • ASIC • EDA</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khush Vasudeo Patil.</title>
+<meta name="description" content="Khush Vasudeo Patil - FPGA architecture, RTL design, ASIC physical design, open-source EDA and AI-assisted hardware engineering.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header class="site-header">
-  <nav class="navbar container">
+<div id="boot"><div id="boot-txt"></div></div>
+
+<header id="siteHeader">
+  <div class="container"><nav>
     <a href="#home" class="brand">Khush Vasudeo Patil<span>.</span></a>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#hardware">Hardware</a>
-      <a href="#projects">Projects</a>
-      <a href="#stack">Stack</a>
-      <a href="#opensource">Open Source</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#hardware">Hardware</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav></div>
 </header>
 
 <main>
 
-<!-- HERO -->
 <section id="home" class="hero">
-  <div class="hero-grid"></div>
-
+  <div id="board3d"></div>
+  <div class="hero-callout hc-tl"><div class="k">FPGA</div><div class="v">XC7S25<small>CSBGA324 · Spartan-7</small></div></div>
+  <div class="hero-ticker"><div class="hero-ticker-track" id="heroTickerTrack"></div></div>
   <div class="container">
-    <div class="hero-content">
-      <div class="hero-copy">
-        <p class="eyebrow">
-          <span class="status-dot"></span>
-          DIGITAL HARDWARE / OPEN SOURCE / EDA
-        </p>
-
-        <h1>Building at the <span class="gradient-text">hardware – software</span> boundary.</h1>
-
-        <p class="hero-description">
-          I'm <strong>Khush Vasudeo Patil</strong> - exploring FPGA architecture, RTL design,
-          ASIC physical design, open-source EDA and AI-assisted hardware engineering.
-        </p>
-
-        <div class="hero-actions">
+    <div class="hero-grid2">
+      <div>
+        <p class="eyebrow"><span class="status-dot"></span>DIGITAL HARDWARE / OPEN SOURCE / EDA</p>
+        <h1 class="glitch" data-t="Building at the hardware &ndash; software boundary.">Building at the <span class="grad-text">hardware &ndash; software</span> boundary.</h1>
+        <p class="hero-desc">I'm <b>Khush Vasudeo Patil</b> - exploring FPGA architecture, RTL design, ASIC physical design, open-source EDA and AI-assisted hardware engineering.</p>
+        <div class="cta-row">
           <a class="btn btn-primary" href="https://github.com/AssassinK786" target="_blank" rel="noopener">View GitHub</a>
           <a class="btn btn-secondary" href="#projects">Explore Projects</a>
         </div>
-
-        <div class="hero-meta">
-          <span>FPGA</span><span>RTL</span><span>ASIC</span>
-          <span>RISC-V</span><span>EDA</span><span>AI × Hardware</span>
-        </div>
+        <div class="hero-meta"><span>FPGA</span><span>RTL</span><span>ASIC</span><span>RISC-V</span><span>EDA</span><span>AI &times; Hardware</span></div>
       </div>
-
       <div class="terminal-card">
-        <div class="terminal-header">
-          <div class="terminal-dots"><span></span><span></span><span></span></div>
-          <span>hardware-flow</span>
-        </div>
-
+        <div class="terminal-header"><div class="terminal-dots"><span></span><span></span><span></span></div><span>hardware-flow</span></div>
         <div class="terminal-body">
           <p><span class="prompt">$</span> ./build_hardware.sh</p>
-          <p class="muted">[01] parsing RTL................ <b>OK</b></p>
-          <p class="muted">[02] synthesis................. <b>OK</b></p>
-          <p class="muted">[03] place &amp; route............. <b>OK</b></p>
-          <p class="muted">[04] timing analysis........... <b>OK</b></p>
-          <p class="muted">[05] bitstream / GDS............ <b>READY</b></p>
+          <p>[01] parsing RTL ................ <b>OK</b></p>
+          <p>[02] synthesis .................. <b>OK</b></p>
+          <p>[03] place &amp; route ............. <b>OK</b></p>
+          <p>[04] timing analysis ............ <b>OK</b></p>
+          <p>[05] bitstream / GDS ............ <b>READY</b></p>
           <br>
           <p><span class="prompt">$</span> echo "open the stack"</p>
           <p class="terminal-output">Open source hardware.</p>
@@ -89,13 +64,9 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="section">
   <div class="container">
-    <div class="section-heading">
-      <span class="section-number">01</span>
-      <h2>About</h2>
-    </div>
+    <div class="section-heading"><span class="section-number">01</span><h2>About</h2></div>
     <div class="about-grid">
       <div>
         <p class="lead">I work across the layers that turn a hardware idea into something that can actually run on silicon or programmable logic.</p>
@@ -104,271 +75,115 @@
         <p>I'm also exploring how <strong>LLMs, reinforcement learning and agentic systems</strong> can be applied to hardware engineering and EDA workflows.</p>
       </div>
       <div class="focus-card">
-        <div class="focus-item">
-          <span class="focus-icon">01</span>
-          <div>
-            <h3>FPGA Toolchains</h3>
-            <p>Open-source synthesis, placement, routing, device databases and bitstreams.</p>
-          </div>
-        </div>
-        <div class="focus-item">
-          <span class="focus-icon">02</span>
-          <div>
-            <h3>ASIC Design</h3>
-            <p>RTL → synthesis → physical design → GDSII.</p>
-          </div>
-        </div>
-        <div class="focus-item">
-          <span class="focus-icon">03</span>
-          <div>
-            <h3>AI × Hardware</h3>
-            <p>Exploring AI-assisted RTL and EDA workflows.</p>
-          </div>
-        </div>
+        <div class="focus-item"><span class="focus-icon">01</span><div><h3>FPGA Toolchains</h3><p>Open-source synthesis, placement, routing, device databases and bitstreams.</p></div></div>
+        <div class="focus-item"><span class="focus-icon">02</span><div><h3>ASIC Design</h3><p>RTL &rarr; synthesis &rarr; physical design &rarr; GDSII.</p></div></div>
+        <div class="focus-item"><span class="focus-icon">03</span><div><h3>AI &times; Hardware</h3><p>Exploring AI-assisted RTL and EDA workflows.</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HARDWARE -->
 <section id="hardware" class="section section-dark">
   <div class="container">
-    <div class="section-heading">
-      <span class="section-number">02</span>
-      <h2>Hardware Stack</h2>
-    </div>
+    <div class="section-heading"><span class="section-number">02</span><h2>Hardware Stack</h2></div>
     <div class="flow">
-      <div class="flow-node"><span>01</span><strong>Architecture</strong><small>System design</small></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node"><span>02</span><strong>RTL / HDL</strong><small>Verilog / SystemVerilog</small></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node"><span>03</span><strong>Synthesis</strong><small>Logic optimization</small></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node"><span>04</span><strong>Implementation</strong><small>Place &amp; route</small></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-node"><span>05</span><strong>Silicon</strong><small>Bitstream / GDSII</small></div>
+      <div class="flow-node"><span>01</span><strong>Architecture</strong>System design</div>
+      <span class="flow-arrow">&rarr;</span>
+      <div class="flow-node"><span>02</span><strong>RTL / HDL</strong>Verilog / SystemVerilog</div>
+      <span class="flow-arrow">&rarr;</span>
+      <div class="flow-node"><span>03</span><strong>Synthesis</strong>Logic optimization</div>
+      <span class="flow-arrow">&rarr;</span>
+      <div class="flow-node"><span>04</span><strong>Implementation</strong>Place &amp; route</div>
+      <span class="flow-arrow">&rarr;</span>
+      <div class="flow-node"><span>05</span><strong>Silicon</strong>Bitstream / GDSII</div>
     </div>
     <div class="hardware-columns">
-      <article class="hardware-card">
-        <span class="card-label">FPGA</span>
-        <h3>Programmable Logic</h3>
-        <p>Exploring FPGA architecture, LUTs, routing resources, configuration and open-source implementation flows.</p>
-        <div class="tags"><span>Xilinx 7-Series</span><span>nextpnr</span><span>Project X-Ray</span><span>APIO</span></div>
-      </article>
-      <article class="hardware-card">
-        <span class="card-label">ASIC</span>
-        <h3>RTL → GDS</h3>
-        <p>Working with open-source digital implementation flows and the complete path from RTL to physical design.</p>
-        <div class="tags"><span>OpenLane</span><span>OpenROAD</span><span>SKY130</span><span>Yosys</span></div>
-      </article>
-      <article class="hardware-card">
-        <span class="card-label">ARCH</span>
-        <h3>Computer Architecture</h3>
-        <p>Interested in RISC-V, SoCs, AXI interfaces, accelerators and hardware/software co-design.</p>
-        <div class="tags"><span>RISC-V</span><span>AXI</span><span>SoC</span><span>Accelerators</span></div>
-      </article>
+      <article class="hardware-card"><span class="card-label">FPGA</span><h3>Programmable Logic</h3><p>Exploring FPGA architecture, LUTs, routing resources, configuration and open-source implementation flows.</p><div class="tags"><span>Xilinx 7-Series</span><span>nextpnr</span><span>Project X-Ray</span><span>APIO</span></div></article>
+      <article class="hardware-card"><span class="card-label">ASIC</span><h3>RTL &rarr; GDS</h3><p>Working with open-source digital implementation flows and the complete path from RTL to physical design.</p><div class="tags"><span>OpenLane</span><span>OpenROAD</span><span>SKY130</span><span>Yosys</span></div></article>
+      <article class="hardware-card"><span class="card-label">ARCH</span><h3>Computer Architecture</h3><p>Interested in RISC-V, SoCs, AXI interfaces, accelerators and hardware/software co-design.</p><div class="tags"><span>RISC-V</span><span>AXI</span><span>SoC</span><span>Accelerators</span></div></article>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects" class="section">
   <div class="container">
-    <div class="section-heading">
-      <span class="section-number">03</span>
-      <h2>Selected Work</h2>
-    </div>
+    <div class="section-heading"><span class="section-number">03</span><h2>Selected Work</h2></div>
     <p class="section-intro">A selection of hardware, FPGA, ASIC and open-source engineering work.</p>
     <div class="projects-grid">
-
       <article class="project-card featured">
-        <div class="project-top">
-          <span class="project-type">OPEN SOURCE / FPGA</span>
-          <span class="project-number">01</span>
-        </div>
+        <div class="project-top"><span class="project-type">OPEN SOURCE / FPGA</span><span class="project-number">01</span></div>
         <h3>Open FPGA Toolchains</h3>
         <p>Exploring and contributing to the ecosystem around open-source FPGA development, including synthesis, device databases, placement, routing and bitstream generation.</p>
         <div class="tags"><span>nextpnr-xilinx</span><span>Project X-Ray</span><span>OpenXC7</span><span>APIO</span></div>
-        <a class="project-link" href="https://github.com/openXC7/nextpnr-xilinx" target="_blank" rel="noopener">Explore ecosystem ↗</a>
+        <a class="project-link" href="https://github.com/openXC7/nextpnr-xilinx" target="_blank" rel="noopener">Explore ecosystem &#8599;</a>
       </article>
-
       <article class="project-card">
-        <div class="project-top">
-          <span class="project-type">ASIC / PHYSICAL DESIGN</span>
-          <span class="project-number">02</span>
-        </div>
-        <h3>RTL → GDS Experiments</h3>
+        <div class="project-top"><span class="project-type">ASIC / PHYSICAL DESIGN</span><span class="project-number">02</span></div>
+        <h3>RTL &rarr; GDS Experiments</h3>
         <p>Digital designs taken through synthesis and physical implementation using open-source ASIC tooling and SKY130-based flows.</p>
         <div class="tags"><span>Verilog</span><span>OpenLane</span><span>OpenROAD</span><span>SKY130</span></div>
-        <a class="project-link" href="https://github.com/AssassinK786" target="_blank" rel="noopener">View repositories ↗</a>
+        <a class="project-link" href="https://github.com/AssassinK786" target="_blank" rel="noopener">View repositories &#8599;</a>
       </article>
-
       <article class="project-card">
-        <div class="project-top">
-          <span class="project-type">DIGITAL DESIGN</span>
-          <span class="project-number">03</span>
-        </div>
+        <div class="project-top"><span class="project-type">DIGITAL DESIGN</span><span class="project-number">03</span></div>
         <h3>Hardware Accelerators</h3>
         <p>Exploring architectures such as systolic arrays, memory structures and hardware accelerators from RTL through implementation.</p>
         <div class="tags"><span>RTL</span><span>AXI</span><span>Accelerator</span><span>FPGA</span></div>
-        <a class="project-link" href="https://github.com/AssassinK786" target="_blank" rel="noopener">View work ↗</a>
+        <a class="project-link" href="https://github.com/AssassinK786" target="_blank" rel="noopener">View work &#8599;</a>
       </article>
-
       <article class="project-card">
-        <div class="project-top">
-          <span class="project-type">EMBEDDED / RTL</span>
-          <span class="project-number">04</span>
-        </div>
+        <div class="project-top"><span class="project-type">EMBEDDED / RTL</span><span class="project-number">04</span></div>
         <h3>Embedded Hardware Systems</h3>
         <p>FPGA-based hardware/software systems involving peripherals, AXI interfaces, processors and real-time data paths.</p>
         <div class="tags"><span>MicroBlaze</span><span>AXI4-Lite</span><span>UART</span><span>XADC</span></div>
-        <a class="project-link" href="https://github.com/AssassinK786" target="_blank" rel="noopener">View work ↗</a>
+        <a class="project-link" href="https://github.com/AssassinK786" target="_blank" rel="noopener">View work &#8599;</a>
       </article>
-
       <article class="project-card">
-        <div class="project-top">
-          <span class="project-type">AI × HARDWARE</span>
-          <span class="project-number">05</span>
-        </div>
+        <div class="project-top"><span class="project-type">AI &times; HARDWARE</span><span class="project-number">05</span></div>
         <h3>AI for Hardware Engineering</h3>
         <p>Investigating LLMs, reinforcement learning and agentic workflows for RTL generation, reasoning, optimization and EDA automation.</p>
         <div class="tags"><span>LLMs</span><span>RL</span><span>Agents</span><span>EDA</span></div>
-        <a class="project-link" href="https://github.com/AssassinK786" target="_blank" rel="noopener">Explore work ↗</a>
+        <a class="project-link" href="https://github.com/AssassinK786" target="_blank" rel="noopener">Explore work &#8599;</a>
       </article>
-
       <article class="project-card">
-        <div class="project-top">
-          <span class="project-type">ARCHITECTURE</span>
-          <span class="project-number">06</span>
-        </div>
+        <div class="project-top"><span class="project-type">ARCHITECTURE</span><span class="project-number">06</span></div>
         <h3>RISC-V &amp; Computer Architecture</h3>
         <p>Exploring open instruction sets, processors, peripherals, SoC integration and hardware/software co-design.</p>
         <div class="tags"><span>RISC-V</span><span>SoC</span><span>CPU</span><span>Embedded</span></div>
-        <a class="project-link" href="https://github.com/AssassinK786" target="_blank" rel="noopener">View repositories ↗</a>
+        <a class="project-link" href="https://github.com/AssassinK786" target="_blank" rel="noopener">View repositories &#8599;</a>
       </article>
-
       <article class="project-card">
-        <div class="project-top">
-          <span class="project-type">IOT / EMBEDDED</span>
-          <span class="project-number">07</span>
-        </div>
+        <div class="project-top"><span class="project-type">IOT / EMBEDDED</span><span class="project-number">07</span></div>
         <h3>Heroku WebSocket-Webhook IoT Bridge</h3>
         <p>Node.js server on Heroku enabling real-time bidirectional communication between ESP32 and webhook events. ESP32 acts as WebSocket client via ESP32WebSocketClient; a lightweight web frontend monitors the data path live.</p>
         <div class="tags"><span>Node.js</span><span>WebSockets</span><span>ESP32</span><span>Heroku</span><span>C++</span></div>
-        <a class="project-link" href="https://github.com/Assassink786/herko_WSKhush" target="_blank" rel="noopener">View repository ↗</a>
+        <a class="project-link" href="https://github.com/Assassink786/herko_WSKhush" target="_blank" rel="noopener">View repository &#8599;</a>
       </article>
-
     </div>
   </div>
 </section>
 
-<!-- STACK -->
 <section id="stack" class="section section-dark">
   <div class="container">
-    <div class="section-heading">
-      <span class="section-number">04</span>
-      <h2>Technical Stack</h2>
-    </div>
+    <div class="section-heading"><span class="section-number">04</span><h2>Technical Stack</h2></div>
     <div class="stack-grid">
-      <div class="stack-group">
-        <h3>HDL / RTL</h3>
-        <div class="stack-items"><span>Verilog</span><span>SystemVerilog</span><span>Veryl</span></div>
-      </div>
-      <div class="stack-group">
-        <h3>FPGA</h3>
-        <div class="stack-items"><span>Yosys</span><span>nextpnr</span><span>Project X-Ray</span><span>APIO</span><span>Vivado</span></div>
-      </div>
-      <div class="stack-group">
-        <h3>ASIC / EDA</h3>
-        <div class="stack-items"><span>OpenLane</span><span>OpenROAD</span><span>Yosys</span><span>SKY130</span><span>Magic</span><span>KLayout</span></div>
-      </div>
-      <div class="stack-group">
-        <h3>Verification</h3>
-        <div class="stack-items"><span>Verilator</span><span>Icarus Verilog</span><span>GTKWave</span></div>
-      </div>
-      <div class="stack-group">
-        <h3>Programming</h3>
-        <div class="stack-items"><span>C</span><span>C++</span><span>Python</span><span>Bash</span></div>
-      </div>
-      <div class="stack-group">
-        <h3>Architecture</h3>
-        <div class="stack-items"><span>RISC-V</span><span>AXI</span><span>SoC</span><span>MicroBlaze</span></div>
-      </div>
-      <div class="stack-group">
-        <h3>AI × Hardware</h3>
-        <div class="stack-items"><span>LLMs</span><span>Reinforcement Learning</span><span>Agents</span><span>AI × EDA</span></div>
-      </div>
-      <div class="stack-group">
-        <h3>Operating Systems</h3>
-        <div class="stack-items"><span>Linux</span><span>BSD</span><span>Windows</span><span>Unix</span><span>ROS</span></div>
-      </div>
+      <div class="stack-group"><h3>HDL / RTL</h3><div class="stack-items"><span>Verilog</span><span>SystemVerilog</span><span>Veryl</span></div></div>
+      <div class="stack-group"><h3>FPGA</h3><div class="stack-items"><span>Yosys</span><span>nextpnr</span><span>Project X-Ray</span><span>APIO</span><span>Vivado</span></div></div>
+      <div class="stack-group"><h3>ASIC / EDA</h3><div class="stack-items"><span>OpenLane</span><span>OpenROAD</span><span>Yosys</span><span>SKY130</span><span>Magic</span><span>KLayout</span></div></div>
+      <div class="stack-group"><h3>Verification</h3><div class="stack-items"><span>Verilator</span><span>Icarus Verilog</span><span>GTKWave</span></div></div>
+      <div class="stack-group"><h3>Programming</h3><div class="stack-items"><span>C</span><span>C++</span><span>Python</span><span>Bash</span></div></div>
+      <div class="stack-group"><h3>Architecture</h3><div class="stack-items"><span>RISC-V</span><span>AXI</span><span>SoC</span><span>MicroBlaze</span></div></div>
+      <div class="stack-group"><h3>AI &times; Hardware</h3><div class="stack-items"><span>LLMs</span><span>Reinforcement Learning</span><span>Agents</span><span>AI &times; EDA</span></div></div>
+      <div class="stack-group"><h3>Operating Systems</h3><div class="stack-items"><span>Linux</span><span>BSD</span><span>Windows</span><span>Unix</span><span>ROS</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- OPEN SOURCE -->
-<section id="opensource" class="section">
-  <div class="container">
-    <div class="section-heading">
-      <span class="section-number">05</span>
-      <h2>Open Source</h2>
-    </div>
-
-    <div class="opensource-intro">
-      <p class="lead">I believe semiconductor tooling should be inspectable, reproducible and accessible.</p>
-      <p>I'm particularly interested in open-source FPGA and ASIC ecosystems where engineers can understand what happens underneath commercial abstractions - and I contribute back where I can.</p>
-    </div>
-
-    <div class="contrib-grid">
-
-      <div class="contrib-card">
-        <div class="contrib-header">
-          <span class="card-label">FPGA TOOLCHAIN</span>
-          <h3>openXC7 - Xilinx Open-Source Flow</h3>
-          <p class="contrib-sub">Spartan-7 support across prjxray-db, nextpnr-xilinx, and APIO; validated end-to-end on Arty S7-25.</p>
-        </div>
-        <div class="pr-list" id="prs-openxc7">
-          <div class="pr-loading"><span class="pr-spinner"></span> Loading contributions…</div>
-        </div>
-        <div class="tags">
-          <span>nextpnr-xilinx</span><span>Project X-Ray</span><span>APIO</span><span>Spartan-7</span><span>Arty S7-25</span>
-        </div>
-      </div>
-
-      <div class="contrib-card">
-        <div class="contrib-header">
-          <span class="card-label">FPGA IDE</span>
-          <h3>icestudio - iCE40 FPGA IDE</h3>
-          <p class="contrib-sub">Board definitions and device support for VSD Squadron FM; verified on physical hardware with FTDI FT232H.</p>
-        </div>
-        <div class="pr-list" id="prs-icestudio">
-          <div class="pr-loading"><span class="pr-spinner"></span> Loading contributions…</div>
-        </div>
-        <div class="tags">
-          <span>icestudio</span><span>iCE40</span><span>APIO</span><span>VSD Squadron FM</span><span>FTDI FT232H</span>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="repo-list" style="margin-top: 2.5rem;">
-      <a href="https://github.com/openXC7/nextpnr-xilinx" target="_blank" rel="noopener" class="repo-item"><span>nextpnr-xilinx</span><span>↗</span></a>
-      <a href="https://github.com/openXC7/prjxray" target="_blank" rel="noopener" class="repo-item"><span>Project X-Ray</span><span>↗</span></a>
-      <a href="https://github.com/FPGAwars/apio" target="_blank" rel="noopener" class="repo-item"><span>APIO</span><span>↗</span></a>
-      <a href="https://github.com/The-OpenROAD-Project/OpenLane" target="_blank" rel="noopener" class="repo-item"><span>OpenLane</span><span>↗</span></a>
-      <a href="https://github.com/The-OpenROAD-Project/OpenROAD" target="_blank" rel="noopener" class="repo-item"><span>OpenROAD</span><span>↗</span></a>
-      <a href="https://github.com/AssassinK786" target="_blank" rel="noopener" class="repo-item"><span>My GitHub</span><span>↗</span></a>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
 <section id="contact" class="contact-section">
   <div class="container">
-    <p class="eyebrow">06 / CONTACT</p>
-    <h2>Let's build something <span class="gradient-text">at the edge.</span></h2>
-    <p>Interested in open-source silicon, FPGA tooling, EDA, RISC-V, embedded systems or AI × hardware?</p>
+    <p class="eyebrow">05 / CONTACT</p>
+    <h2>Let's build something <span class="grad-text">at the edge.</span></h2>
+    <p>Interested in open-source silicon, FPGA tooling, EDA, RISC-V, embedded systems or AI &times; hardware?</p>
     <div class="contact-actions">
       <a class="btn btn-primary" href="https://github.com/AssassinK786" target="_blank" rel="noopener">GitHub</a>
       <a class="btn btn-secondary" href="mailto:khushpatil786@gmail.com">Email</a>
@@ -378,149 +193,249 @@
 
 </main>
 
-<footer class="footer">
+<footer>
   <div class="container footer-inner">
-    <span>© 2026 Khush Vasudeo Patil</span>
-    <span class="footer-code">RTL → FPGA → ASIC → AI</span>
-    <a href="https://github.com/AssassinK786" target="_blank" rel="noopener">GitHub ↗</a>
+    <span>&copy; 2026 Khush Vasudeo Patil</span>
+    <span class="footer-code">RTL &rarr; FPGA &rarr; ASIC &rarr; AI</span>
+    <a href="https://github.com/AssassinK786" target="_blank" rel="noopener">GitHub &#8599;</a>
   </div>
 </footer>
 
-<script>
-/* ── GitHub PR & Issues Feed ── */
-(async () => {
-  const AUTHOR = "AssassinK786";
+<div id="term-btn">[ TERMINAL ]</div>
+<div id="term-modal">
+  <div id="term-win">
+    <div class="terminal-header"><div class="terminal-dots"><span></span><span></span><span></span></div><span>[ESC] CLOSE</span></div>
+    <div id="term-out"></div>
+    <div id="term-in-row"><span class="prompt">$</span><input id="term-in" autocomplete="off" placeholder="type 'help'"></div>
+  </div>
+</div>
 
-  const GROUPS = {
-    "prs-openxc7": [
-      "openXC7/nextpnr-xilinx",
-      "openXC7/prjxray",
-      "openXC7/tools-openxc7",
-    ],
-    "prs-icestudio": [
-      "FPGAwars/icestudio",
-      "FPGAwars/apio",
-      "FPGAwars/apio-definitions",
-    ],
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* boot sequence */
+  var bootLines = [
+    "khush@hardware:~$ boot --profile=portfolio",
+    "[ 0.10] loading identity ................ OK",
+    "[ 0.34] mounting /projects .............. OK",
+    "[ 0.58] linking github.com/AssassinK786 . OK",
+    "[ 0.81] status: SYSTEM ACTIVE",
+    ""
+  ].join("\n");
+  var bootEl = document.getElementById('boot-txt');
+  var bootWrap = document.getElementById('boot');
+  if (reduced) {
+    bootWrap.classList.add('hidden');
+  } else {
+    var bi = 0;
+    (function typeBoot(){
+      bootEl.textContent = bootLines.slice(0, bi);
+      bi++;
+      if (bi <= bootLines.length) { setTimeout(typeBoot, 8); }
+      else { setTimeout(function(){ bootWrap.classList.add('hidden'); }, 400); }
+    })();
+    bootWrap.addEventListener('click', function(){ bootWrap.classList.add('hidden'); });
+  }
+
+  /* header scroll state */
+  var header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', function(){
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  });
+
+  /* hero ticker -- one list, rendered twice back to back for a seamless loop */
+  (function(){
+    var items = [
+      '<b>250 MHz</b>', 'Spartan-7', 'FPGA Design', 'Embedded Systems',
+      'Electronics', 'Analog Design', 'Digital VLSI', 'Open-Source EDA',
+      '<b>38</b> Merged PRs', '<b>16</b> Repos', 'RISC-V', 'AXI'
+    ];
+    var html = items.map(function(t){ return '<span>' + t + '</span>'; }).join('<span> - </span>');
+    var track = document.getElementById('heroTickerTrack');
+    if (track) track.innerHTML = html + '<span> - </span>' + html + '<span> - </span>';
+  })();
+
+  /* stylized 3D Arty S7-25 (Spartan-7) board, built from primitives --
+     an illustration of the real board's layout, not a fabricated die shot */
+  (function(){
+    var mount = document.getElementById('board3d');
+    if (!window.THREE || !mount) return;
+
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(32, mount.clientWidth / mount.clientHeight, 0.1, 100);
+    camera.position.set(0.5, 0.7, 8.3);
+    camera.lookAt(0, 0, 0);
+
+    var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(mount.clientWidth, mount.clientHeight);
+    mount.appendChild(renderer.domElement);
+
+    scene.add(new THREE.AmbientLight(0xffffff, 0.75));
+    // near-white key light so component bump shading reads without
+    // recoloring the real board photo; the accent lights stay very
+    // faint, just enough rim tint to match the page palette
+    var keyWhite = new THREE.DirectionalLight(0xffffff, 0.55);
+    keyWhite.position.set(3, 6, 4);
+    scene.add(keyWhite);
+    var keyCyan = new THREE.DirectionalLight(0x22d3ee, 0.18);
+    keyCyan.position.set(4, 5, 3);
+    scene.add(keyCyan);
+    var keyPurple = new THREE.DirectionalLight(0x8b7cf6, 0.15);
+    keyPurple.position.set(-4, 2, -3);
+    scene.add(keyPurple);
+
+    var board = new THREE.Group();
+
+    // The real, accurate Arty S7-25 board layout (Digilent's own component
+    // placement -- IC1 the XC7S25, IC7 the Winbond QSPI flash, IC8 the FTDI
+    // USB-JTAG/UART bridge, every header/button/LED at its real designator),
+    // textured onto a tilted plane rather than hand-modeled per part -- a
+    // hand-built primitive scene got this board's own memory chip wrong
+    // (there is no DDR3 on this board; IC7 is QSPI flash) and stayed a low-
+    // fidelity guess next to the real thing.
+    var boardTex = new THREE.TextureLoader().load("assets/3d/arty-s7-front.jpg");
+    boardTex.colorSpace = THREE.SRGBColorSpace || THREE.sRGBEncoding;
+    var boardAspect = 1420 / 1108;
+    var boardW = 4.6, boardH = boardW / boardAspect;
+    var boardPlane = new THREE.Mesh(
+      new THREE.PlaneGeometry(boardW, boardH),
+      new THREE.MeshStandardMaterial({
+        map: boardTex, side: THREE.DoubleSide,
+        bumpMap: new THREE.TextureLoader().load("assets/3d/arty-s7-bump.jpg"),
+        bumpScale: 0.045, roughness: 0.75, metalness: 0.05
+      })
+    );
+    board.add(boardPlane);
+
+    // the real back of the same board, on a second plane facing the other
+    // way -- so rotating the card shows an actual second side, not a
+    // fabricated one
+    var backTex = new THREE.TextureLoader().load("assets/3d/arty-s7-back.jpg");
+    backTex.colorSpace = THREE.SRGBColorSpace || THREE.sRGBEncoding;
+    var boardBack = new THREE.Mesh(
+      new THREE.PlaneGeometry(boardW, boardH),
+      new THREE.MeshBasicMaterial({ map: backTex, side: THREE.DoubleSide })
+    );
+    boardBack.position.z = -0.1;
+    boardBack.rotation.y = Math.PI;
+    board.add(boardBack);
+
+    // thin dark edge between the two faces, for real depth
+    var edge = new THREE.Mesh(
+      new THREE.BoxGeometry(boardW, boardH, 0.09),
+      new THREE.MeshStandardMaterial({ color: 0x05070a, roughness: 0.8 })
+    );
+    edge.position.z = -0.05;
+    board.add(edge);
+
+    // presented like a tilted card facing the viewer, not a tabletop --
+    // a flat plane lying horizontal under a high, narrow-FOV camera
+    // foreshortens to an unreadable sliver, so this leans the card back
+    // slightly instead and turns it a little toward the viewer
+    board.rotation.x = -0.16;
+    board.rotation.y = 0.28;
+    scene.add(board);
+
+    // manual drag-to-rotate only -- no automatic spin, no passive
+    // mouse-position parallax. It sits still until someone drags it.
+    // Listens on the whole hero, not the canvas: #board3d sits behind
+    // .hero .container (z-index:2), which covers most of the hero's
+    // area, so a listener on the canvas itself would rarely get the
+    // pointerdown -- it would hit the text/terminal card first and
+    // start a native text-selection drag instead of ever reaching here.
+    var heroSection = document.getElementById('home');
+    var targetRotY = board.rotation.y, targetRotX = board.rotation.x;
+    var dragging = false, lastX = 0, lastY = 0;
+    heroSection.style.cursor = 'grab';
+    heroSection.addEventListener('pointerdown', function(e){
+      if (e.target.closest('a, button, input, textarea, #term-btn, #term-modal')) return;
+      dragging = true;
+      lastX = e.clientX; lastY = e.clientY;
+      heroSection.style.cursor = 'grabbing';
+      heroSection.setPointerCapture(e.pointerId);
+      e.preventDefault();
+    });
+    heroSection.addEventListener('pointermove', function(e){
+      if (!dragging) return;
+      var dx = e.clientX - lastX, dy = e.clientY - lastY;
+      lastX = e.clientX; lastY = e.clientY;
+      targetRotY += dx * 0.008;
+      targetRotX = Math.max(-0.7, Math.min(0.5, targetRotX + dy * 0.006));
+    });
+    heroSection.addEventListener('pointerup', function(){
+      dragging = false;
+      heroSection.style.cursor = 'grab';
+    });
+
+    function resize3d(){
+      camera.aspect = mount.clientWidth / mount.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(mount.clientWidth, mount.clientHeight);
+    }
+    window.addEventListener('resize', resize3d);
+
+    function animate(){
+      board.rotation.y += (targetRotY - board.rotation.y) * 0.12;
+      board.rotation.x += (targetRotX - board.rotation.x) * 0.12;
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    }
+    animate();
+  })();
+
+  /* terminal easter egg */
+  var termBtn = document.getElementById('term-btn');
+  var termModal = document.getElementById('term-modal');
+  var termOut = document.getElementById('term-out');
+  var termIn = document.getElementById('term-in');
+
+  var CMDS = {
+    help: "Commands: about, projects, stack, contact, whoami, sudo, clear, exit",
+    about: "Khush Vasudeo Patil - FPGA architecture, RTL design, ASIC physical design, open-source EDA, AI x hardware.",
+    projects: "See #projects - Open FPGA Toolchains, RTL->GDS, Hardware Accelerators, AI for Hardware, RISC-V, Heroku IoT Bridge.",
+    stack: "Verilog, SystemVerilog, Yosys, nextpnr, Project X-Ray, OpenLane, OpenROAD, SKY130, RISC-V, C/C++/Python.",
+    contact: "khushpatil786@gmail.com - github.com/AssassinK786",
+    whoami: "guest @ khushpatil.is-a.dev",
+    sudo: "Nice try. Permission denied (this isn't that kind of shell).",
+    clear: null,
+    exit: null
   };
 
-  function getType(item) {
-    return item.pull_request !== undefined ? "pr" : "issue";
+  function printLine(cls, text){
+    var d = document.createElement('div');
+    if (cls) d.className = cls;
+    d.textContent = text;
+    termOut.appendChild(d);
+    termOut.scrollTop = termOut.scrollHeight;
   }
-
-  function prStatusBadge(item) {
-    const isPR = getType(item) === "pr";
-    if (isPR && item.pull_request?.merged_at) return '<span class="pr-status merged">merged</span>';
-    if (item.state === "closed")      return '<span class="pr-status closed">closed</span>';
-    return '<span class="pr-status open">open</span>';
+  function openTerm(){
+    termModal.classList.add('open');
+    if (!termOut.children.length) printLine(null, "type 'help' to see available commands");
+    termIn.focus();
   }
+  function closeTerm(){ termModal.classList.remove('open'); }
 
-  function repoShort(repoUrl) {
-    return repoUrl.replace("https://api.github.com/repos/", "");
-  }
-
-  function timeAgo(dateStr) {
-    const d = new Date(dateStr);
-    const diff = Math.floor((Date.now() - d) / 1000);
-    if (diff < 60)      return `${diff}s ago`;
-    if (diff < 3600)    return `${Math.floor(diff/60)}m ago`;
-    if (diff < 86400)   return `${Math.floor(diff/3600)}h ago`;
-    if (diff < 2592000) return `${Math.floor(diff/86400)}d ago`;
-    return d.toLocaleDateString("en-GB", { year: "numeric", month: "short" });
-  }
-
-  function getIcon(type) {
-    if (type === "pr") {
-      return `<svg class="pr-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354z" fill="currentColor"/>
-        <path fill-rule="evenodd" d="M3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z" fill="currentColor"/>
-      </svg>`;
-    } else {
-      return `<svg class="pr-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z" fill="currentColor"/>
-      </svg>`;
-    }
-  }
-
-  function renderPRs(containerId, items) {
-    const el = document.getElementById(containerId);
-    if (!items.length) {
-      el.innerHTML = '<p class="pr-empty">No pull requests or issues found.</p>';
-      return;
-    }
-    el.innerHTML = items.map(item => {
-      const repo  = repoShort(item.repository_url);
-      const num   = item.number;
-      const badge = prStatusBadge(item);
-      const ago   = timeAgo(item.created_at);
-      const type  = getType(item);
-      const icon  = getIcon(type);
-      const typeLabel = type === "pr" ? "PR" : "Issue";
-      const comments = item.comments ? `<span class="pr-comments">💬 ${item.comments}</span>` : "";
-      return `
-        <a class="pr-row" href="${item.html_url}" target="_blank" rel="noopener">
-          ${icon}
-          <div class="pr-info">
-            <span class="pr-title">${item.title}</span>
-            <span class="pr-meta">
-              <span class="pr-repo">${repo}</span>
-              <span class="pr-type">${typeLabel}</span>
-              <span class="pr-num">#${num}</span>
-              · ${ago}
-              ${comments}
-            </span>
-          </div>
-          ${badge}
-        </a>`;
-    }).join("");
-  }
-
-  function renderError(containerId) {
-    const el = document.getElementById(containerId);
-    el.innerHTML = '<p class="pr-empty">Could not load contributions - <a href="https://github.com/AssassinK786" target="_blank" rel="noopener">view on GitHub ↗</a></p>';
-  }
-
-  try {
-    // Fetch both PRs and issues by removing type:pr filter
-    const url = `https://api.github.com/search/issues?q=author:${AUTHOR}&per_page=50&sort=created&order=desc`;
-    const res  = await fetch(url, { headers: { Accept: "application/vnd.github+json" } });
-    if (!res.ok) throw new Error(res.status);
-    const { items } = await res.json();
-
-    for (const [containerId, repos] of Object.entries(GROUPS)) {
-      const repoSet  = new Set(repos.map(r => r.toLowerCase()));
-      const filtered = items.filter(item =>
-        repoSet.has(repoShort(item.repository_url).toLowerCase())
-      );
-      renderPRs(containerId, filtered);
-    }
-  } catch {
-    Object.keys(GROUPS).forEach(renderError);
-  }
+  termBtn.addEventListener('click', openTerm);
+  termModal.addEventListener('click', function(e){ if (e.target === termModal) closeTerm(); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeTerm();
+    if (e.key === '/' && document.activeElement !== termIn && document.activeElement.tagName !== 'INPUT') { e.preventDefault(); openTerm(); }
+  });
+  termIn.addEventListener('keydown', function(e){
+    if (e.key !== 'Enter') return;
+    var val = termIn.value.trim();
+    if (!val) return;
+    printLine('line-cmd', val);
+    var key = val.toLowerCase();
+    if (key === 'clear') { termOut.innerHTML = ''; }
+    else if (key === 'exit') { closeTerm(); }
+    else if (CMDS.hasOwnProperty(key)) { printLine(null, CMDS[key]); }
+    else { printLine(null, key + ": command not found. try 'help'"); }
+    termIn.value = '';
+  });
 })();
-
-/* ── Nav ── */
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navLinks   = document.querySelector(".nav-links");
-
-  menuToggle.addEventListener("click", () => {
-    const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-    menuToggle.setAttribute("aria-expanded", String(!expanded));
-    navLinks.classList.toggle("open");
-  });
-
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-    });
-  });
-
-  const header = document.querySelector(".site-header");
-  window.addEventListener("scroll", () => {
-    header.classList.toggle("scrolled", window.scrollY > 30);
-  });
 </script>
-
 </body>
 </html>
